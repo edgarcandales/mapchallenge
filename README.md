@@ -1,8 +1,9 @@
 # mapchallenge
 requirements:
 
--Visual Studio Code.
--ios Simulator.
+- Visual Studio Code.
+- ios Simulator.
+- expo (if you dont have expo instaled I suggest to follow the instructions here: https://dev.to/runosaduwa/how-to-install-react-native-with-expo-quick-easy-4j8j)
 
 Follow the steps to set up and run the project:
 
