@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  buttonIddle: {
+  buttonIdle: {
     backgroundColor: 'green',
     borderWidth: 1,
     borderColor: 'black',
@@ -24,5 +24,19 @@ export default StyleSheet.create({
     borderRadius: 5,
     margin: 5,
     padding: 5,
+  },
+  CalloutStyle: {
+    width: 200,
+    height: 200,
+  },
+  pin1: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: 'black',
+    borderWidth: 5,
+    borderRadius: 20,
+    width: 30,
+    height: 30,
   },
 });

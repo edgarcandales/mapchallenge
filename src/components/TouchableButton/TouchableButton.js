@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 const TouchableButton = (props) => {
-  const { label, ChanteStatus, vehicle, status, customStyle } = props;
+  const { label, ChangeStatus, vehicle, status, customStyle } = props;
   return (
-    <TouchableOpacity onPress={() => ChanteStatus(vehicle, status)}>
+    <TouchableOpacity onPress={() => ChangeStatus(vehicle, status)}>
       <View style={customStyle}>
         <Text>{label}</Text>
       </View>

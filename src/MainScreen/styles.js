@@ -7,8 +7,8 @@ export default StyleSheet.create({
     margin: 15,
   },
   map: {
-    width: 0.9 * Dimensions.get('window').width,
-    height: 0.7 * Dimensions.get('window').height,
+    width: Dimensions.get('window').width,
+    height: 0.9 * Dimensions.get('window').height,
   },
   displayList: {
     flexDirection: 'row',
