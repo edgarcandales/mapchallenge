@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MapView from 'react-native-maps';
-import { View, ActivityIndicator } from 'react-native';
+import { Text, View, ActivityIndicator } from 'react-native';
 import MarkerComponent from '../components/MarkerComponent/MarkerComponent';
 import { url } from '../API/API';
 import Title from '../components/Title/Title';
@@ -37,20 +37,14 @@ const MainScreen = () => {
   }, []);
   return (
     <View style={styles.container}>
+      <Title />
       {isLoading ? (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: 'maroon',
-            width: '100%',
-          }}>
+        <View style={styles.loading}>
           <ActivityIndicator size='large' />
+          <Text>Updating Status...</Text>
         </View>
       ) : (
         <View>
-          <Title />
           <View>
             <MapView
               mapType={'mutedStandard'}

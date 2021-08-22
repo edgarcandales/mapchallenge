@@ -9,5 +9,6 @@ export default StyleSheet.create({
   },
   titleText: {
     fontSize: 18,
+    marginTop: 0,
   },
 });

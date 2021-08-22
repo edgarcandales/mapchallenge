@@ -11,4 +11,11 @@ export default StyleSheet.create({
     width: Dimensions.get('window').width,
     height: 0.9 * Dimensions.get('window').height,
   },
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: '100%',
+  },
 });
