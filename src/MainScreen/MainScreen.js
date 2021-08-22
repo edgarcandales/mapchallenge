@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MapView, { Circle } from 'react-native-maps';
+import MapView from 'react-native-maps';
 import { View, ActivityIndicator } from 'react-native';
 import MarkerComponent from '../components/MarkerComponent/MarkerComponent';
 import { url } from '../API/API';
@@ -10,13 +10,19 @@ import axios from 'axios';
 const MainScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [vehicles, setVehicles] = useState([]);
-  const ChangeStatus = async (id, status) => {
-    const res = await axios.put(`${url}/${id}`);
+  const ChangeStatus = async (vehicleData, status) => {
     setIsLoading(true);
-    console.log(res);
-    if (res) {
+    const newObjectVehicle = {
+      ...vehicleData,
+      status,
+    };
+    const res = await axios.put(`${url}/${vehicleData.id}`, newObjectVehicle);
+    if (res.status === 200) {
       const res = await axios.get(url);
       setVehicles(res.data);
+      setIsLoading(false);
+    } else {
+      alert('error updating info');
       setIsLoading(false);
     }
   };
@@ -32,7 +38,16 @@ const MainScreen = () => {
   return (
     <View style={styles.container}>
       {isLoading ? (
-        <ActivityIndicator size='large' />
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'maroon',
+            width: '100%',
+          }}>
+          <ActivityIndicator size='large' />
+        </View>
       ) : (
         <View>
           <Title />

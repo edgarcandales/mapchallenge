@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { Marker, Callout, Circle } from 'react-native-maps';
 import TouchableButton from '../TouchableButton/TouchableButton';
 import styles from './styles';
@@ -25,21 +25,21 @@ const MarkerComponent = (props) => {
           <TouchableButton
             label='Idle'
             ChangeStatus={ChangeStatus}
-            vehicle={vehicle.id}
+            vehicle={vehicle}
             status={'idle'}
             customStyle={styles.buttonIdle}
           />
           <TouchableButton
             label='En Route'
             ChangeStatus={ChangeStatus}
-            vehicle={vehicle.id}
+            vehicle={vehicle}
             status={'enRoute'}
             customStyle={styles.buttonEnRoute}
           />
           <TouchableButton
             label='Broken Down'
             ChangeStatus={ChangeStatus}
-            vehicle={vehicle.id}
+            vehicle={vehicle}
             status={'brokenDown'}
             customStyle={styles.buttonBrokenDown}
           />

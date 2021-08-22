@@ -29,14 +29,4 @@ export default StyleSheet.create({
     width: 200,
     height: 200,
   },
-  pin1: {
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 5,
-    borderRadius: 20,
-    width: 30,
-    height: 30,
-  },
 });
