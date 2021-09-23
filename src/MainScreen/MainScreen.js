@@ -6,6 +6,10 @@ import { url } from '../API/API';
 import Title from '../components/Title/Title';
 import styles from './styles';
 import axios from 'axios';
+import { Amplitude } from '@amplitude/react-native';
+
+const ampInstance = Amplitude.getInstance();
+ampInstance.init('74a39ebfd5f6a6012fb23cc99cf7a68f');
 
 const MainScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +25,12 @@ const MainScreen = () => {
       const res = await axios.get(url);
       setVehicles(res.data);
       setIsLoading(false);
+      var eventProperties = {
+        color: 'blue',
+        age: 20,
+        key: 'value',
+      };
+      ampInstance.logEvent(vehicleData.name, newObjectVehicle);
     } else {
       alert('error updating info');
       setIsLoading(false);
